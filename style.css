@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* .slide img {
+  width: 100%;
+  height: 50%;
+}
+.slider {
+  display: flex;
+} */
+.slider {
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+.slider:hover .slider__btn {
+  visibility: visible;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  visibility: hidden;
+  cursor: pointer;
+}
+/* .slider__btn:hover {
+  opacity: 1;
+} */
+
+.slider__btn--left {
+  left: 14%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 14%;
+  transform: translate(50%, -50%);
+}
+
+@media only screen and (max-width: 375px) {
+  .slide > img {
+    /* Only for images that have different size than slide */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* THIS creates the animation! */
+    transition: transform 1s;
+  }
+  .slider:hover .slider__btn {
+    visibility: visible;
+  }
+  .slider__btn {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    visibility: hidden;
+  }
+  .slider__btn--left {
+    left: 14%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 14%;
+    transform: translate(50%, -50%);
+  }
+}
